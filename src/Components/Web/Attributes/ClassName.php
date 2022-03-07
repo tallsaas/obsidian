@@ -2,7 +2,12 @@
 
 namespace Obsidian\Components\Web\Attributes;
 
-class ClassName
+use Illuminate\Support\Collection;
+
+class ClassName extends Collection 
 {
-  //
+  public function string()
+  {
+    return $this->implode(' ');
+  }
 }

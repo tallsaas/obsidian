@@ -2,7 +2,7 @@
 
 namespace Obsidian\Components\Web\Attributes\Style;
 
-enum Style: string
+enum Properties: string
 {
   case alignContent = 'align-content';
   case alignItems = 'align-items';

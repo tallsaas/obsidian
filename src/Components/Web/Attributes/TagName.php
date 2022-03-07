@@ -2,8 +2,24 @@
 
 namespace Obsidian\Components\Web\Attributes;
 
+use Obsidian\Exceptions\Web\Components\Attributes\TagNameException;
+
+use Illuminate\Support\Collection;
+
 enum TagName 
 {
+  public static function get(string $find): self
+  {
+    $tagNames = self::cases();
+    $tagNames = new Collection($tagNames);
+
+    if ($tagName = $tagNames->where('name', $find)->first()) :
+      return $tagName;
+    endif;
+
+    throw new TagNameException("{$find} is not a valid HTML5 tag name");
+  }
+
   case a;          //	Specifies an anchor
   case abbr;       //	Specifies an abbreviation
   case acronym;    //	Deprecated:Specifies an acronym
