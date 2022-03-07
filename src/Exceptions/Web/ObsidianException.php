@@ -1,6 +1,6 @@
 <?php
 
-namespace Obsidian\Exceptions;
+namespace Obsidian\Exceptions\Web;
 
 use Exception;
 

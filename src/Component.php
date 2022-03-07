@@ -2,9 +2,9 @@
 
 namespace Obsidian;
 
-use Obsidian\Attributes\Web\TagName;
-use Obsidian\Attributes\Web\ClassName;
-use Obsidian\Attributes\Web\Style;
+use Obsidian\Web\Attributes\TagName;
+use Obsidian\Web\Attributes\ClassName;
+use Obsidian\Web\Attributes\Style;
 
 class Component
 {
@@ -14,9 +14,11 @@ class Component
 
   protected Collection $style;
 
-  public function __construct(TagName $tagName, )
+  public function __construct(TagName $tagName, ClassNames $classNames, Styles $styles)
   {
-    //
+    $this->tagName    = $tagName;
+    $this->classNames = $classNames;
+    $this->styles     = $styles;
   }
 
   public function for(Collection $collection, mixed $itemType): void
